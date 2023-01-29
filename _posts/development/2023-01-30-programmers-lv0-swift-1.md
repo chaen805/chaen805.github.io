@@ -5,7 +5,7 @@ categories: [Problem Solving, swift]
 tags: [swift, problem solving, programmers]
 ---
 
-~~수정중~~
+### ~~수정중~~
 
 > ❤️‍🔥 프로그래머스 Lv. 0 문제로 Swift와 친해지기!
 
@@ -100,17 +100,26 @@ func solution(_ num1:Int, _ num2:Int) -> Int {
 
 ## 배열 두 배 만들기
 ```swift
-
+func solution(_ numbers:[Int]) -> [Int] {
+    return numbers.map{ $0 * 2 }
+}
 ```
 
 ## 나머지 구하기
 ```swift
-
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return num1 % num2
+}
 ```
 
 ## 중앙값 구하기
 ```swift
-
+func solution(_ array:[Int]) -> Int {
+    var mid: Int = array.count / 2
+    var temp = array.sorted()
+    
+    return temp[mid]
+}
 ```
 
 ## 최빈값 구하기
@@ -120,35 +129,82 @@ func solution(_ num1:Int, _ num2:Int) -> Int {
 
 ## 짝수는 싫어요
 ```swift
-
+// where절 사용
+func solution(_ n:Int) -> [Int] {
+    var odd: [Int] = []
+    for i in 1...n where i % 2 == 1 { odd.append(i) }
+    return odd
+}
+//filter 사용
+func solution(_ n:Int) -> [Int] {
+    return odd
+}
 ```
 
 ## 피자 나눠 먹기 (1)
 ```swift
-
+func solution(_ n:Int) -> Int {
+    return n % 7 == 0 ? n / 7 : n / 7 + 1
+}
 ```
 
 ## 피자 나눠 먹기 (2)
 ```swift
+func gcd(_ x:Int, _ y:Int) -> Int {
+    var a = x
+    var b = y
+    while b != 0 {
+        var r = a % b
+        a = b
+        b = r
+    }
+    return a
+}
 
+func lmc(_ a:Int, _ b:Int) -> Int {
+    return a * b / gcd(a,b)
+}
+
+
+func solution(_ n:Int) -> Int {
+    return lmc(n, 6) / 6
+}
 ```
 
 ## 피자 나눠 먹기 (3)
 ```swift
-
+func solution(_ slice:Int, _ n:Int) -> Int {
+    return n / slice + (n % slice == 0 ? 0 : 1)
+}
 ```
 
 ## 배열의 평균값
 ```swift
-
+func solution(_ numbers:[Int]) -> Double {
+    let sum: Int = numbers.reduce(0){ return $0 + $1 }
+    return Double(sum) / Double(numbers.count)
+}
 ```
 
-## 웃기게 할인 받기
+## 옷가게 할인 받기
 ```swift
-
+func solution(_ price:Int) -> Int {
+    var answer: Double = 0.0
+    if price >= 500000 {
+        answer = Double(price) * 0.8
+    } else if price >= 300000 {
+        answer = Double(price) * 0.9
+    } else if price >= 100000 {
+        answer = Double(price) * 0.95
+    } else { return price }
+    return Int(answer)
+}
 ```
 
 ## 아이스 아메리카노
 ```swift
-
+func solution(_ money:Int) -> [Int] {
+    let price = 5500
+    return [money / price, money % price]
+}
 ```

@@ -5,19 +5,15 @@ categories: [Problem Solving, swift]
 tags: [swift, problem solving, programmers]
 ---
 
-### ~~수정중~~
-
 > ❤️‍🔥 프로그래머스 Lv. 0 문제로 Swift와 친해지기!
 
-코딩테스트 입문 100제를 푸는 포스팅입니다.
+코딩테스트 입문 100제를 푸는 포스팅입니다.  
 20문제씩 총 5개의 게시글이 올라갈 예정입니다.
 
 **```import Foundation``` 생략**
 
 ## 중복된 숫자 개수
 ```swift
-import Foundation
-
 // where절 사용
 func solution(_ array:[Int], _ n:Int) -> Int {
     var result = 0
@@ -34,8 +30,6 @@ func solution(_ array:[Int], _ n:Int) -> Int {
 
 ## 머쓱이보다 키 큰 사람
 ```swift
-import Foundation
-
 // where절 사용
 func solution(_ array:[Int], _ height:Int) -> Int {
     var result = 0
@@ -52,8 +46,6 @@ func solution(_ array:[Int], _ height:Int) -> Int {
 
 ## 두 수의 차
 ```swift
-import Foundation
-
 func solution(_ num1:Int, _ num2:Int) -> Int {
     return num1 - num2
 }
@@ -95,7 +87,23 @@ func solution(_ num1:Int, _ num2:Int) -> Int {
 
 ## 분수의 덧셈
 ```swift
-
+func gcd(_ x:Int, _ y:Int) -> Int {
+    var a = x
+    var b = y
+    while b != 0 {
+        var r = a % b
+        a = b
+        b = r
+    }
+    return a
+}
+func solution(_ numer1:Int, _ denom1:Int, _ numer2:Int, _ denom2:Int) -> [Int] {
+    var numer = (numer1 * denom2) + (numer2 * denom1)
+    var denom = denom1 * denom2
+    var d = gcd(numer, denom)
+    
+    return [numer / d, denom / d]
+}
 ```
 
 ## 배열 두 배 만들기
@@ -124,7 +132,17 @@ func solution(_ array:[Int]) -> Int {
 
 ## 최빈값 구하기
 ```swift
-
+func solution(_ array:[Int]) -> Int {
+    var check: [Int: Int] = [:]
+    for i in array {
+        check[i, default: 0] += 1
+    }
+    var maxCount = check.max(by: {$0.value < $1.value})!.value
+    var temp = check.filter({ $0.value == maxCount}).keys
+    
+    guard temp.count == 1 else { return -1 }
+    return temp.first!
+}
 ```
 
 ## 짝수는 싫어요

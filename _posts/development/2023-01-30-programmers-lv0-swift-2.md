@@ -5,8 +5,6 @@ categories: [Problem Solving, swift]
 tags: [swift, problem solving, programmers]
 ---
 
-### ~~수정중~~
-
 > ❤️‍🔥 프로그래머스 Lv. 0 문제로 Swift와 친해지기!
 
 **```import Foundation``` 생략**
@@ -132,6 +130,20 @@ func solution(_ emergency:[Int]) -> [Int] {
 
 ## 순서쌍의 개수
 ```swift
+func solution(_ n:Int) -> Int {
+    var answer = 0
+    var rt = Int(sqrt(Double(n)))
+    for i in 1...rt {
+        if n % i == 0 {
+            answer += 1
+        }
+    }
+    answer *= 2
+    if rt * rt == n {
+        answer -= 1
+    }
+    return answer
+}
 ```
 
 ## 개미 군단

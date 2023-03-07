@@ -1,6 +1,6 @@
 ---
 title: "아카데미 일상 1주차"
-date: 2023-03-6 21:30:00 +0900
+date: 2023-03-06 21:30:00 +0900
 categories: [Apple Developer Academy, Diary]
 tags: [academy]
 ---

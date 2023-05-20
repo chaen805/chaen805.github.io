@@ -1,6 +1,6 @@
 ---
 title: "SwiftUI 공식 문서 - Model data"
-date: 2023-05-20 18:40:00 +0900
+date: 2023-05-20 18:13:00 +0900
 categories: [iOS, SwiftUI]
 tags: [iOS, swift, SwiftUI]
 ---

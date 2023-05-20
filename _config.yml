@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 
 title: ChaenLog                          # the main title
 
-tagline: 기록하며 성장하기   # it will display as the sub-title
+tagline: 개발자가 되고싶어요   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
